@@ -1,0 +1,102 @@
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:ahmad@example.com", label: "Email" }
+  ];
+
+  const quickLinks = [
+    { label: "About", href: "#about" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Skills", href: "#skills" },
+    { label: "Contact", href: "#contact" }
+  ];
+
+  const scrollToSection = (href: string) => {
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  return (
+    <footer className="bg-secondary/50 border-t border-border/50">
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Brand & Description */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-gradient">Ahmad.dev</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Passionate developer yang menciptakan solusi digital inovatif untuk masa depan yang lebih baik.
+            </p>
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  className="w-10 h-10 border border-border/50 rounded-lg flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-all hover:scale-110"
+                  aria-label={social.label}
+                >
+                  <social.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h4 className="font-semibold">Quick Links</h4>
+            <nav className="space-y-2">
+              {quickLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
+                  className="block text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h4 className="font-semibold">Let's Work Together</h4>
+            <p className="text-muted-foreground">
+              Punya project menarik? Mari diskusi dan wujudkan ide Anda.
+            </p>
+            <a
+              href="mailto:ahmad@example.com"
+              className="inline-block text-primary hover:text-primary/80 transition-colors"
+            >
+              ahmad@example.com
+            </a>
+          </div>
+        </div>
+
+        <div className="border-t border-border/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-muted-foreground text-sm">
+            © {currentYear} Ahmad Developer. All rights reserved.
+          </p>
+          <p className="text-muted-foreground text-sm flex items-center mt-2 md:mt-0">
+            Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> using React & TypeScript
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
