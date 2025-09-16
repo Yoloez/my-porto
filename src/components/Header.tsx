@@ -20,7 +20,7 @@ const Header = () => {
     { label: "About", href: "#about" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" }
+    { label: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -36,18 +36,19 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border/50" : "bg-transparent"
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border/50" : "bg-transparent"}`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); scrollToSection("#"); }}
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("#");
+            }}
             className="text-2xl font-bold text-gradient cursor-pointer"
           >
-            Ahmad.dev
+            Hanan's porto
           </a>
 
           {/* Desktop Navigation */}
@@ -70,22 +71,13 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button 
-              size="sm" 
-              className="glow-effect"
-              onClick={() => scrollToSection("#contact")}
-            >
+            <Button size="sm" className="glow-effect" onClick={() => scrollToSection("#contact")}>
               Hire Me
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
+          <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
@@ -108,11 +100,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-2">
-                <Button 
-                  size="sm" 
-                  className="w-full"
-                  onClick={() => scrollToSection("#contact")}
-                >
+                <Button size="sm" className="w-full" onClick={() => scrollToSection("#contact")}>
                   Hire Me
                 </Button>
               </div>
