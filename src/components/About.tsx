@@ -7,35 +7,33 @@ const About = () => {
     {
       icon: Code,
       title: "Clean Code",
-      description: "Menulis kode yang bersih, maintainable, dan scalable"
+      description: "Menulis kode yang bersih, maintainable, dan scalable",
     },
     {
       icon: Palette,
       title: "UI/UX Design",
-      description: "Menciptakan interface yang intuitif dan user-friendly"
+      description: "Menciptakan interface yang intuitif dan user-friendly",
     },
     {
       icon: Rocket,
       title: "Performance",
-      description: "Optimasi performa untuk pengalaman pengguna terbaik"
+      description: "Optimasi performa untuk pengalaman pengguna terbaik",
     },
     {
       icon: Users,
       title: "Collaboration",
-      description: "Bekerja efektif dalam tim dan komunikasi yang baik"
-    }
+      description: "Bekerja efektif dalam tim dan komunikasi yang baik",
+    },
   ];
 
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="py-20 px-0 lg:px-6">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-gradient">Tentang</span> Saya
+            <span className="text-gradient">About</span> Me
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Passionate developer dengan 5+ tahun pengalaman dalam menciptakan solusi digital inovatif
-          </p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Passionate developer dengan 5+ tahun pengalaman dalam menciptakan solusi digital inovatif</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -43,14 +41,11 @@ const About = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">Perjalanan Karir</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Dimulai dari curiosity tentang bagaimana website bekerja, saya mulai belajar programming 
-                secara autodidak. Sekarang saya fokus pada pengembangan aplikasi web modern menggunakan 
-                teknologi terkini seperti React, Node.js, dan cloud technologies.
+                Dimulai dari curiosity tentang bagaimana website bekerja, saya mulai belajar programming secara autodidak. Sekarang saya fokus pada pengembangan aplikasi web modern menggunakan teknologi terkini seperti React, Node.js, dan
+                cloud technologies.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Saya percaya bahwa teknologi harus memberikan solusi nyata untuk masalah nyata. 
-                Itulah mengapa saya selalu berusaha memahami kebutuhan bisnis dan user experience 
-                dalam setiap project yang saya kerjakan.
+                Saya percaya bahwa teknologi harus memberikan solusi nyata untuk masalah nyata. Itulah mengapa saya selalu berusaha memahami kebutuhan bisnis dan user experience dalam setiap project yang saya kerjakan.
               </p>
             </div>
 

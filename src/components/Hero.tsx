@@ -27,16 +27,18 @@ const Hero = () => {
                 <br />
                 <span className="text-foreground">Fijananto</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">I'm very interest with anything related to technology</p>
+              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed text-justify">
+                I'm very interested in everything related to technology. Exploring the world of innovation and creativity through coding, design, and development.
+              </p>
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="group glow-effect">
+              <Button size="lg" className="group glow-effect bg-white">
                 <Mail className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
                 Contact Me
               </Button>
               <a href={cv} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="group">
+                <Button variant="outline" size="lg" className="group hover:bg-primary">
                   <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
                   Download CV
                 </Button>
@@ -47,7 +49,7 @@ const Hero = () => {
               <a href="https://github.com/Yoloez" target="_blank" rel="noopener noreferrerq" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="hero" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">
+              <a href="https://www.linkedin.com/in/hanan-fijananto-1362152b7/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">
                 <Linkedin className="h-6 w-6" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">

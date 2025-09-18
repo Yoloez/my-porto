@@ -4,11 +4,28 @@ import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      // Tambah efek blur/border kalau sudah lewat 50px
+      setIsScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY) {
+        // Scroll ke bawah → sembunyikan navbar
+        setShowNavbar(false);
+      } else {
+        // Scroll ke atas → tampilkan navbar
+        setShowNavbar(true);
+      }
+
+      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,7 +53,11 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border/50" : "bg-transparent"}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+        ${isScrolled ? "bg-background/55 backdrop-blur-md border-b border-border/50" : "bg-transparent"}
+        ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -46,7 +67,7 @@ const Header = () => {
               e.preventDefault();
               scrollToSection("#");
             }}
-            className="text-2xl font-bold text-gradient cursor-pointer"
+            className="text-2xl text-gradient font-bold"
           >
             Hanan's porto
           </a>

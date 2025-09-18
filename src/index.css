@@ -18,7 +18,7 @@ All colors MUST be HSL.
     --popover: 220 15% 10%;
     --popover-foreground: 210 20% 98%;
 
-    --primary: 270 95% 75%;
+    --primary: 232 95% 75%;
     --primary-foreground: 220 15% 8%;
 
     --secondary: 220 15% 15%;
@@ -38,15 +38,15 @@ All colors MUST be HSL.
     --ring: 270 95% 75%;
 
     /* Custom Portfolio Colors */
-    --hero-gradient: linear-gradient(135deg, hsl(270, 95%, 75%) 0%, hsl(220, 95%, 75%) 100%);
-    --card-gradient: linear-gradient(145deg, hsl(220, 15%, 12%) 0%, hsl(220, 15%, 8%) 100%);
+    --hero-gradient: linear-gradient(135deg, hsl(271, 43%, 49%) 0%, rgb(65, 65, 159), hsl(220, 95%, 75%) 100%);
+    --card-gradient: linear-gradient(145deg, hsl(220, 20%, 18%) 0%, hsl(220, 15%, 8%) 100%);
     --accent-glow: 270 95% 75%;
     --text-highlight: 270 80% 85%;
-    
+
     /* Shadows */
     --shadow-glow: 0 0 40px hsl(var(--accent-glow) / 0.3);
     --shadow-card: 0 10px 30px -10px hsl(220 15% 5% / 0.5);
-    
+
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
@@ -123,22 +123,22 @@ All colors MUST be HSL.
   .hero-gradient {
     background: var(--hero-gradient);
   }
-  
+
   .card-gradient {
     background: var(--card-gradient);
   }
-  
+
   .text-gradient {
     background: var(--hero-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .glow-effect {
     box-shadow: var(--shadow-glow);
   }
-  
+
   .card-shadow {
     box-shadow: var(--shadow-card);
   }

@@ -1,16 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Code2, 
-  Palette, 
-  Database, 
-  Cloud, 
-  Smartphone, 
-  GitBranch,
-  Monitor,
-  Zap
-} from "lucide-react";
+import { Code2, Palette, Database, Cloud, Smartphone, GitBranch, Monitor, Zap } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
@@ -19,22 +10,22 @@ const Skills = () => {
       icon: Monitor,
       color: "text-blue-400",
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Vue.js", level: 80 }
-      ]
+        { name: "React.js/Next.js", level: 80 },
+        { name: "TypeScript", level: 75 },
+        { name: "Tailwind CSS", level: 90 },
+        { name: "React Native Expo", level: 80 },
+      ],
     },
     {
       title: "Backend Development",
       icon: Database,
       color: "text-green-400",
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
+        { name: "Laravel", level: 90 },
+        { name: "MySQL", level: 85 },
         { name: "PostgreSQL", level: 85 },
-        { name: "MongoDB", level: 80 }
-      ]
+        { name: "MongoDB", level: 80 },
+      ],
     },
     {
       title: "Mobile Development",
@@ -44,44 +35,33 @@ const Skills = () => {
         { name: "React Native", level: 85 },
         { name: "Flutter", level: 75 },
         { name: "iOS Development", level: 70 },
-        { name: "Android Development", level: 70 }
-      ]
+        { name: "Android Development", level: 70 },
+      ],
     },
     {
-      title: "DevOps & Tools",
+      title: "Tools",
       icon: Cloud,
       color: "text-orange-400",
-      skills: [
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
-        { name: "Git/GitHub", level: 95 },
-        { name: "CI/CD", level: 80 }
-      ]
-    }
+      skills: [{ name: "Git/GitHub", level: 95 }],
+    },
   ];
 
-  const technologies = [
-    "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Node.js",
-    "Python", "PostgreSQL", "MongoDB", "Docker", "AWS", "Git",
-    "Tailwind CSS", "React Native", "Flutter", "Firebase"
-  ];
+  const technologies = ["JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Node.js", "Python", "PostgreSQL", "MongoDB", "Docker", "AWS", "Git", "Tailwind CSS", "React Native", "Firebase"];
 
   return (
-    <section id="skills" className="py-20 px-6">
+    <section id="skills" className="py-20 lg:px-8 px-0">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold mb-4">
             <span className="text-gradient">Skills</span> & Expertise
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Teknologi dan tools yang saya kuasai untuk menciptakan solusi digital terbaik
-          </p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Teknologi dan tools yang saya kuasai untuk menciptakan solusi digital terbaik</p>
         </div>
 
         {/* Skill Categories */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="card-gradient border-border/50 hover:glow-effect transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+            <Card key={index} className="card-gradient border-border/50 hover:glow-effect transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
                   <category.icon className={`h-8 w-8 mr-3 ${category.color}`} />
@@ -108,12 +88,7 @@ const Skills = () => {
           <h3 className="text-2xl font-semibold mb-8">Technology Stack</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {technologies.map((tech, index) => (
-              <Badge 
-                key={index} 
-                variant="outline" 
-                className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                style={{animationDelay: `${index * 0.05}s`}}
-              >
+              <Badge key={index} variant="outline" className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default" style={{ animationDelay: `${index * 0.05}s` }}>
                 {tech}
               </Badge>
             ))}
