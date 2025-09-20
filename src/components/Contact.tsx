@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import wa from "@/assets/whatsapp.png";
 import { FaWhatsapp } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,10 +17,35 @@ const Contact = () => {
     message: "",
   });
   const { toast } = useToast();
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_6en6ygs", "template_csjebky", form.current, {
+        publicKey: "6ifygz6eWs9E_cGAA",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          toast({
+            title: "Pesan Terkirim!",
+            description: "Terima kasih atas pesan Anda. Saya akan segera merespon.",
+          });
+        },
+        (error) => {
+          console.log("GAGAL CIKKK", error.text);
+          toast({
+            title: "Pesan Gagal terkirim!",
+            description: "Sedang ada perbaikan sistem.",
+          });
+        }
+      );
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     // Simulate form submission
     toast({
       title: "Pesan Terkirim!",
@@ -43,7 +68,7 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       value: "hananfijananto@mail.ugm.ac.id",
-      href: "mailto:hananfijananto@mail.ugm.ac.id",
+      href: "https://mail.google.com/mail/u/0/#sent?compose=new",
     },
     {
       icon: FaWhatsapp,
@@ -60,9 +85,9 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Github, href: "https://github.com/Yoloez", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/hanan-fijananto-1362152b7/", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/hnfja/", label: "Instagram" },
   ];
 
   return (
@@ -82,7 +107,7 @@ const Contact = () => {
               <CardTitle className="text-2xl">Kirim Pesan</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={sendEmail} ref={form} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Nama</Label>

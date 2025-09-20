@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
-import heroProfil from "@/assets/profil hanan 4k.jpeg";
+import heroProfil from "@/assets/kairi.png";
 import cv from "@/assets/hanan-cv-real.pdf";
 import { useScrollAnimation, scrollAnimationVariants } from "@/hooks/useScrollAnimation";
 

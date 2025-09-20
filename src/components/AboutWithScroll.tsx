@@ -38,7 +38,7 @@ const AboutWithScroll = () => {
           <h2 className="text-4xl font-bold mb-4">
             <span className="text-gradient">About</span> Me
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Passionate developer dengan 5+ tahun pengalaman dalam menciptakan solusi digital inovatif</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">I am a third-semester Software Engineering student at Gadjah Mada University</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
