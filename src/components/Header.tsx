@@ -58,7 +58,7 @@ const Header = () => {
         ${isScrolled ? "bg-background/55 backdrop-blur-md border-b border-border/50" : "bg-transparent"}
         ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-0">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a
@@ -105,7 +105,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-md">
+          <div className="md:hidden w-full border-t border-border/50 bg-black/75 backdrop-blur-md">
             <nav className="py-4 space-y-2">
               {menuItems.map((item) => (
                 <a
@@ -115,7 +115,7 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="block py-2 px-4 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors cursor-pointer"
+                  className="block py-2 px-4 text-muted-foreground hover:text-foreground hover:bg-secondary/90 rounded-lg transition-colors cursor-pointer"
                 >
                   {item.label}
                 </a>

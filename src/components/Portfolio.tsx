@@ -13,7 +13,7 @@ const Portfolio = () => {
       title: "Tempo Gala Dinner",
       description:
         "This website provides a simple and convenient way to register for our free dinner events. After completing the registration, each participant will automatically receive a unique QR code. The QR code will be used for verification during re-registration at the event, ensuring a smooth and efficient check-in process.",
-      image: project1,
+      image: tgdemo,
       technologies: ["PHP Native", "MySQL", "Tailwind CSS"],
       liveUrl: "https://tgd.kmmuslimpogung.com/public/index.php?page=login",
       githubUrl: "https://github.com/Yoloez/TGD",
@@ -23,7 +23,7 @@ const Portfolio = () => {
       description:
         "This cafeteria website offers a seamless way for customers to browse the menu and place their orders online. With just a few clicks, you can choose your favorite meals, customize your order, and enjoy a faster, more convenient dining experience.",
       image: project2,
-      technologies: ["PHP Native", "HTML", "CSS", "MySQL", "JavaScript"],
+      technologies: ["PHP Native", "HTML", "CSS", "MySQL", "JavaScript", "Bootstrap"],
       liveUrl: "localhost/",
       githubUrl: "https://github.com/Yoloez/Projek-UAS",
     },
@@ -42,9 +42,9 @@ const Portfolio = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-gradient">Portfolio</span> Saya
+            My <span className="text-gradient">Portfolio</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Beberapa project yang telah saya kerjakan dengan passion dan dedikasi tinggi</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Several projects that I have worked on with great passion and dedication</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,10 +1,8 @@
-import { cp } from "fs";
 import { useState } from "react";
 
 function Counter() {
   const [count, setCounter] = useState(0);
   const [color, setColor] = useState("#ffffff");
-
   return (
     <>
       <div>
@@ -20,6 +18,14 @@ function Counter() {
         </p>
         <button className="p-4 text-white" onClick={() => setColor("blue")}>
           Ganti Biru
+        </button>
+      </div>
+      <div>
+        <p>
+          Ini warna <span style={{ color: color }}>{color}</span>
+        </p>
+        <button className="p-4 text-white" onClick={() => setColor("red")}>
+          Ganti Merah
         </button>
       </div>
 

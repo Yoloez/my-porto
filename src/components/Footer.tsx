@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm">© {currentYear} Hanan Fijananto. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm">©{currentYear} Hanan Fijananto. All rights reserved.</p>
           <p className="text-muted-foreground text-sm flex items-center mt-2 md:mt-0">Made using React + Vite & TypeScript</p>
         </div>
       </div>

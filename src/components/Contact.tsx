@@ -66,7 +66,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-0 lg:px-6 bg-secondary/30">
+    <section id="contact" className="py-16 px-0 lg:px-6 bg-secondary/30">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold mb-4">
@@ -115,7 +115,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8 animate-fade-in-left">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Mari Terhubung</h3>
+              <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground leading-relaxed mb-8">Saya selalu antusias untuk mendengar tentang project baru, peluang kolaborasi, atau sekadar ngobrol tentang teknologi. Jangan ragu untuk menghubungi saya!</p>
             </div>
 

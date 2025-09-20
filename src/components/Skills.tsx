@@ -23,8 +23,6 @@ const Skills = () => {
       skills: [
         { name: "Laravel", level: 90 },
         { name: "MySQL", level: 85 },
-        { name: "PostgreSQL", level: 85 },
-        { name: "MongoDB", level: 80 },
       ],
     },
     {
@@ -32,10 +30,8 @@ const Skills = () => {
       icon: Smartphone,
       color: "text-purple-400",
       skills: [
-        { name: "React Native", level: 85 },
-        { name: "Flutter", level: 75 },
-        { name: "iOS Development", level: 70 },
-        { name: "Android Development", level: 70 },
+        { name: "React Native", level: 75 },
+        { name: "Kotlin", level: 70 },
       ],
     },
     {

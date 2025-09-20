@@ -18,6 +18,9 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <a href="/Counter" className="text-blue-300 font-bold text-4xl">
+        Ke Menu Counter
+      </a>
     </div>
   );
 };
