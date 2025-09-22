@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const Header = () => {
         ${isScrolled ? "bg-background/55 backdrop-blur-md border-b border-border/50" : "bg-transparent"}
         ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
     >
-      <div className="container mx-auto px-0">
+      <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a
@@ -91,7 +91,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:block ">
             <Button size="sm" className="glow-effect" onClick={() => scrollToSection("#contact")}>
               Hire Me
             </Button>
@@ -105,8 +105,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden w-full border-t border-border/50 bg-black/75 backdrop-blur-md">
-            <nav className="py-4 space-y-2">
+          <div className="md:hidden border border-purple/80 bg-black/75 backdrop-blur-md rounded-lg">
+            <nav className="py-4 space-y-2 flex flex-col items-center justify-center gap-3 bg-black/75 rounded-lg">
               {menuItems.map((item) => (
                 <a
                   key={item.label}
@@ -115,12 +115,12 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="block py-2 px-4 text-muted-foreground hover:text-foreground hover:bg-secondary/90 rounded-lg transition-colors cursor-pointer"
+                  className="py-2 px-4 text-muted-foreground text-center hover:text-foreground hover:bg-secondary/90 hover:w-full rounded-lg transition-colors cursor-pointer"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="pt-2">
+              <div className="pt-2 px-8 w-full">
                 <Button size="sm" className="w-full" onClick={() => scrollToSection("#contact")}>
                   Hire Me
                 </Button>
