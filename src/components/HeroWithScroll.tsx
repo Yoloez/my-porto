@@ -3,38 +3,94 @@ import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import heroProfil from "@/assets/kairi.png";
 import cv from "@/assets/hanan-cv-real.pdf";
 import { useScrollAnimation, scrollAnimationVariants } from "@/hooks/useScrollAnimation";
+import SplitText from "./SplitText";
+import LiquidEther from "./LiquidEther";
 
 const HeroWithScroll = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.2 });
   const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.2 });
-
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
   return (
     <section ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 hero-gradient opacity-10"></div>
-
-      {/* Floating particles effect */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent rounded-full animate-float" style={{ animationDelay: "1s" }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-primary rounded-full animate-float" style={{ animationDelay: "2s" }}></div>
+      {/* LiquidEther as Background */}
+      <div className="absolute inset-0 z-0">
+        <LiquidEther
+          colors={["#5227FF", "#FF9FFC", "#ffffff"]}
+          mouseForce={25}
+          cursorSize={100}
+          isViscous={false}
+          viscous={30}
+          iterationsViscous={32}
+          iterationsPoisson={32}
+          resolution={0.5}
+          isBounce={false}
+          autoDemo={true}
+          autoSpeed={1.0}
+          autoIntensity={1.2}
+          takeoverDuration={0}
+          autoResumeDelay={300}
+          autoRampDuration={0.6}
+        />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 py-16">
+      {/* Background gradient overlay (optional - untuk efek tambahan) */}
+      <div className="absolute inset-0 hero-gradient opacity-10 z-10"></div>
+
+      {/* Main Content Container */}
+      <div className="container relative z-20 mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-center lg:ml-14 ml-auto">
           {/* Content */}
           <div ref={contentRef} className={`space-y-8 transition-all duration-1000 ${contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="space-y-4">
               <p className="text-lg text-muted-foreground tracking-wide">Hello, i'm</p>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="text-gradient">Hanan</span>
+                <SplitText
+                  text="Hanan"
+                  className="text-6xl font-semibold text-center text-blue-400"
+                  delay={200}
+                  duration={0.6}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  textAlign="center"
+                  onLetterAnimationComplete={handleAnimationComplete}
+                />
                 <br />
-                <span className="text-foreground">Fijananto</span>
+                <SplitText
+                  text="Fijananto"
+                  className="text-8xl font-semibold text-center"
+                  delay={100}
+                  duration={0.6}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  textAlign="center"
+                  onLetterAnimationComplete={handleAnimationComplete}
+                />
               </h1>
-              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed text-justify">
-                I'm very interested in everything related to technology. Exploring the world of innovation and creativity through coding, design, and development.
-              </p>
+              <SplitText
+                text="I'm very interested in everything related to technology. Exploring the world of innovation and creativity through coding, design, and development."
+                className="text-xl text-muted-foreground max-w-lg leading-relaxed "
+                delay={20}
+                duration={0.6}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="justify"
+                onLetterAnimationComplete={handleAnimationComplete}
+              />
             </div>
 
             <div className="flex flex-wrap gap-4">

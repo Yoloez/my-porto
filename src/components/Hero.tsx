@@ -2,10 +2,30 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import heroProfil from "@/assets/kairi.png";
 import cv from "@/assets/hanan-cv-real.pdf";
+import { useState } from "react";
+import SplitText from "./SplitText";
+
+const handleAnimationComplete = () => {
+  console.log("All letters have animated!");
+};
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <SplitText
+        text="Hello, GSAP!"
+        className="text-2xl font-semibold text-center"
+        delay={100}
+        duration={0.6}
+        ease="power3.out"
+        splitType="chars"
+        from={{ opacity: 0, y: 40 }}
+        to={{ opacity: 1, y: 0 }}
+        threshold={0.1}
+        rootMargin="-100px"
+        textAlign="center"
+        onLetterAnimationComplete={handleAnimationComplete}
+      />
       {/* Background gradient */}
       <div className="absolute inset-0 hero-gradient opacity-10"></div>
 
@@ -17,16 +37,13 @@ const Hero = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-6 py-16">
+        {/* <div className="w-100% relative"> */}
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-center lg:ml-14 ml-auto">
           {/* Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <p className="text-lg text-muted-foreground tracking-wide">Hello, i'm</p>
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <span className="text-gradient">Hanan</span>
-                <br />
-                <span className="text-foreground">Fijananto</span>
-              </h1>
+              <p className="text-lg text-muted-foreground tracking-wide">lo, i'm aaasss</p>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gradient leading-tight text-center">Hanan Fijananto</h1>
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed text-justify">
                 I'm very interested in everything related to technology. Exploring the world of innovation and creativity through coding, design, and development.
               </p>

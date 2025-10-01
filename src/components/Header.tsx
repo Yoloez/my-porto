@@ -69,7 +69,7 @@ const Header = () => {
             }}
             className="text-2xl text-gradient font-bold"
           >
-            Hanan's porto
+            Hanan's portfolio
           </a>
 
           {/* Desktop Navigation */}
