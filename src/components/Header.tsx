@@ -121,7 +121,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-2 px-8 w-full">
-                <Button size="sm" className="w-full" onClick={() => scrollToSection("#contact")}>
+                <Button size="sm" className="w-full text-gradient" onClick={() => scrollToSection("#contact")}>
                   Hire Me
                 </Button>
               </div>

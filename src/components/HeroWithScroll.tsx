@@ -14,11 +14,11 @@ const HeroWithScroll = () => {
     console.log("All letters have animated!");
   };
   return (
-    <section ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section ref={heroRef} className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-8">
       {/* LiquidEther as Background */}
       <div className="absolute inset-0 z-0">
         <LiquidEther
-          colors={["#5227FF", "#FF9FFC", "#ffffff"]}
+          colors={["#5227FF", "#FF9FFC", "white"]}
           mouseForce={25}
           cursorSize={100}
           isViscous={false}
@@ -37,19 +37,19 @@ const HeroWithScroll = () => {
       </div>
 
       {/* Background gradient overlay (optional - untuk efek tambahan) */}
-      <div className="absolute inset-0 hero-gradient opacity-10 z-10"></div>
+      <div className="absolute inset-0 hero-gradient opacity-10 px-6 z-10"></div>
 
       {/* Main Content Container */}
       <div className="container relative z-20 mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-center lg:ml-14 ml-auto">
           {/* Content */}
           <div ref={contentRef} className={`space-y-8 transition-all duration-1000 ${contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <div className="space-y-4">
+            <div className="space-y-4 ">
               <p className="text-lg text-muted-foreground tracking-wide">Hello, i'm</p>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                 <SplitText
                   text="Hanan"
-                  className="text-6xl font-semibold text-center text-blue-400"
+                  className="text-4xl sm:text-6xl font-semibold text-center !text-purple-400"
                   delay={200}
                   duration={0.6}
                   ease="power3.out"
@@ -64,7 +64,7 @@ const HeroWithScroll = () => {
                 <br />
                 <SplitText
                   text="Fijananto"
-                  className="text-8xl font-semibold text-center"
+                  className="sm:text-8xl text-4xl font-semibold text-center"
                   delay={100}
                   duration={0.6}
                   ease="power3.out"
