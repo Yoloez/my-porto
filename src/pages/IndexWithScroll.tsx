@@ -6,6 +6,7 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import SplashCursor from "../components/SplashCursor";
 
 const IndexWithScroll = () => {
   const { ref: portfolioRef, isVisible: portfolioVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -17,6 +18,7 @@ const IndexWithScroll = () => {
       <Header />
       <main>
         <HeroWithScroll />
+        {/* <SplashCursor /> */}
         <AboutWithScroll />
 
         {/* Portfolio Section with Scroll Animation */}
@@ -35,11 +37,11 @@ const IndexWithScroll = () => {
         </div>
       </main>
       <Footer />
-      <div className="text-center bg-red-300 flex justify-center h-24">
+      {/* <div className="text-center bg-red-300 flex justify-center h-24">
         <a href="/Counter" className="text-blue-300 font-bold text-4xl mt-10 p-2 bg-red-300">
           Ke Menu Counter
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

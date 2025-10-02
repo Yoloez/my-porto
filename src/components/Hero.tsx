@@ -12,32 +12,32 @@ const handleAnimationComplete = () => {
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <SplitText
-        text="Hello, GSAP!"
-        className="text-2xl font-semibold text-center"
-        delay={100}
-        duration={0.6}
-        ease="power3.out"
-        splitType="chars"
-        from={{ opacity: 0, y: 40 }}
-        to={{ opacity: 1, y: 0 }}
-        threshold={0.1}
-        rootMargin="-100px"
-        textAlign="center"
-        onLetterAnimationComplete={handleAnimationComplete}
-      />
       {/* Background gradient */}
       <div className="absolute inset-0 hero-gradient opacity-10"></div>
 
       {/* Floating particles effect */}
       <div className="absolute inset-0">
+        <SplitText
+          text="Hello, GSAP!"
+          className="text-2xl font-semibold text-center"
+          delay={100}
+          duration={0.6}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+          onLetterAnimationComplete={handleAnimationComplete}
+        />
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float"></div>
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent rounded-full animate-float" style={{ animationDelay: "1s" }}></div>
         <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-primary rounded-full animate-float" style={{ animationDelay: "2s" }}></div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 py-16">
-        {/* <div className="w-100% relative"> */}
+      {/* <div className="container relative z-10 mx-auto px-6 py-16"> */}
+      <div className="w-100% relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-center lg:ml-14 ml-auto">
           {/* Content */}
           <div className="space-y-8 animate-fade-in">

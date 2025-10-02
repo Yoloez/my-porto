@@ -2,6 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Palette, Database, Cloud, Smartphone, GitBranch, Monitor, Zap } from "lucide-react";
+import { LogoLoop } from "./LogoLoop";
+import { SiReact, SiNextdotjs, SiJavascript, SiTypescript, SiTailwindcss, SiKotlin, SiLaravel, SiGit, SiMysql, SiExpo, SiCss3, SiPhp } from "react-icons/si";
+import { FaHtml5, FaJava } from "react-icons/fa6";
 
 const Skills = () => {
   const skillCategories = [
@@ -42,7 +45,31 @@ const Skills = () => {
     },
   ];
 
-  const technologies = ["JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Node.js", "Python", "PostgreSQL", "MongoDB", "Docker", "AWS", "Git", "Tailwind CSS", "React Native", "Firebase"];
+  const techLogos = [
+    { node: <SiReact />, title: "React", href: "https://react.dev" },
+    { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+    { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+    { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <FaHtml5 />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiCss3 />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiKotlin />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiLaravel />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiGit />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiMysql />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiExpo />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiJavascript />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <SiPhp />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+    { node: <FaJava />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  ];
+
+  // Alternative with image sources
+  const imageLogos = [
+    { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+    { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+    { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
+    { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+  ];
+  // const technologies = ["JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Node.js", "Python", "PostgreSQL", "MongoDB", "Docker", "AWS", "Git", "Tailwind CSS", "React Native", "Firebase"];
 
   return (
     <section id="skills" className="py-20 lg:px-8 px-0">
@@ -81,13 +108,12 @@ const Skills = () => {
 
         {/* Technology Stack */}
         <div className="text-center animate-fade-in">
-          <h3 className="text-2xl font-semibold mb-8">Technology Stack</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
-              <Badge key={index} variant="outline" className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default" style={{ animationDelay: `${index * 0.05}s` }}>
-                {tech}
-              </Badge>
-            ))}
+          <h1 className="text-4xl font-semibold mb-16">
+            <span className="text-gradient">Technology </span>
+            <span className="!text-white">Stack</span>
+          </h1>
+          <div style={{ height: "150px", position: "relative", overflow: "hidden" }}>
+            <LogoLoop logos={techLogos} speed={70} direction="left" logoHeight={50} gap={70} pauseOnHover scaleOnHover fadeOut fadeOutColor="#ffffff" ariaLabel="Technology partners" />
           </div>
         </div>
       </div>

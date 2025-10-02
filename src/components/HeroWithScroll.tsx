@@ -64,7 +64,7 @@ const HeroWithScroll = () => {
                 <br />
                 <SplitText
                   text="Fijananto"
-                  className="sm:text-8xl text-4xl font-semibold text-center"
+                  className="sm:text-8xl text-6xl font-semibold text-center"
                   delay={100}
                   duration={0.6}
                   ease="power3.out"
