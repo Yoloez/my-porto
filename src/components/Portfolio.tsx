@@ -28,10 +28,10 @@ const Portfolio = () => {
       githubUrl: "https://github.com/Yoloez/Projek-UAS",
     },
     {
-      title: "SaaS Management Platform",
+      title: "SIA Global Nusantara",
       description: "Platform manajemen SaaS dengan multi-tenant architecture, subscription management, dan advanced reporting.",
       image: project3,
-      technologies: ["Next.js", "Prisma", "PostgreSQL", "Stripe"],
+      technologies: ["Expo", "Laravel", "React Native"],
       liveUrl: "#",
       githubUrl: "#",
     },
