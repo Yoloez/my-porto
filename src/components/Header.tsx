@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const Header = () => {
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   // const [lastScrollY, setLastScrollY] = useState(0);
@@ -90,8 +92,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block ">
+          {/* Theme Toggle and CTA Button */}
+          <div className="hidden md:flex items-center space-x-2">
+            <Button variant="ghost" size="sm" onClick={toggleTheme}>
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
             <Button size="sm" className="glow-effect" onClick={() => scrollToSection("#contact")}>
               Hire Me
             </Button>
@@ -120,7 +125,11 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <div className="pt-2 px-8 w-full">
+              <div className="pt-2 px-8 w-full flex flex-col gap-2">
+                <Button variant="ghost" size="sm" onClick={toggleTheme} className="w-full">
+                  {theme === "dark" ? <Sun className="h-5 w-5 mr-2" /> : <Moon className="h-5 w-5 mr-2" />}
+                  {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                </Button>
                 <Button size="sm" className="w-full text-gradient" onClick={() => scrollToSection("#contact")}>
                   Hire Me
                 </Button>
