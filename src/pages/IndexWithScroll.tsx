@@ -18,7 +18,7 @@ const IndexWithScroll = () => {
       <Header />
       <main>
         <HeroWithScroll />
-        <SplashCursor />
+        {/* <SplashCursor /> */}
         <AboutWithScroll />
 
         {/* Portfolio Section with Scroll Animation */}

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Eye, Github, Linkedin, Mail } from "lucide-react";
 import heroProfil from "@/assets/kairi.png";
 import cv from "@/assets/hanan-cv-real.pdf";
 import { useScrollAnimation, scrollAnimationVariants } from "@/hooks/useScrollAnimation";
@@ -99,9 +99,9 @@ const HeroWithScroll = () => {
                 Contact Me
               </Button>
               <a href={cv} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="group hover:bg-primary hover:scale-105 transition-all duration-300">
-                  <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
-                  Download CV
+                <Button variant="outline" size="lg" className="group hover:bg-primary hover:scale-105 hover:text-black ransition-all duration-300">
+                  <Eye className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
+                  View CV
                 </Button>
               </a>
             </div>

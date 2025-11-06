@@ -4,7 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import project3 from "@/assets/project-3.png";
+import project4 from "@/assets/project-4.png";
+import project5 from "@/assets/project-5.png";
 import tgdemo from "@/assets/tgd-laptop.png";
 
 const Portfolio = () => {
@@ -24,16 +26,32 @@ const Portfolio = () => {
         "This cafeteria website offers a seamless way for customers to browse the menu and place their orders online. With just a few clicks, you can choose your favorite meals, customize your order, and enjoy a faster, more convenient dining experience.",
       image: project2,
       technologies: ["PHP Native", "HTML", "CSS", "MySQL", "JavaScript", "Bootstrap"],
-      liveUrl: "localhost/",
+      liveUrl: "#",
       githubUrl: "https://github.com/Yoloez/Projek-UAS",
     },
     {
       title: "SIA Global Nusantara",
-      description: "Platform manajemen SaaS dengan multi-tenant architecture, subscription management, dan advanced reporting.",
+      description: "A comprehensive information system designed to streamline and enhance the management of educational institutions, providing efficient solutions for administrative tasks, student data management, and academic processes.",
       image: project3,
-      technologies: ["Expo", "Laravel", "React Native"],
+      technologies: ["Expo", "Laravel", "React Native", "MySQL", "TypeScript"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Yoloez/FE-SIA-GLOBAL/tree/features/chat",
+    },
+    {
+      title: "BMI & BMR Calculator",
+      description: "A web application that helps users calculate their Body Mass Index (BMI) and Basal Metabolic Rate (BMR) based on their personal information and activity level.",
+      image: project4,
+      technologies: ["Next Js", "Tailwind CSS", "TypeScript"],
+      liveUrl: "https://bmi-bmr.vercel.app/",
+      githubUrl: "",
+    },
+    {
+      title: "My Portfolio Website",
+      description: "A personal portfolio website to showcase my projects, skills, and experience as a developer.",
+      image: project5,
+      technologies: ["React JS", "Tailwind CSS", "TypeScript", "Vite", "Vercel", "Framer Motion"],
+      liveUrl: "#",
+      githubUrl: "",
     },
   ];
 
