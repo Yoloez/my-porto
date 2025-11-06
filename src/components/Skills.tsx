@@ -87,10 +87,7 @@ const Skills = () => {
             <Card key={index} className="card-gradient border-border/50 hover:glow-effect transition-all duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardContent className="p-6">
                 <div className="flex items-center mb-6">
-                  <category.icon
-                    className="h-8 w-8 mr-3"
-                    style={{ background: "linear-gradient(135deg, hsl(271, 43%, 49%) 0%, rgb(65, 65, 159), hsl(220, 95%, 75%) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
-                  />
+                  <category.icon className="h-8 w-8 mr-3 text-gradient" />
                   <h3 className="text-xl font-semibold">{category.title}</h3>
                 </div>
                 <div className="space-y-4">
@@ -100,7 +97,7 @@ const Skills = () => {
                         <span className="text-sm font-medium">{skill.name}</span>
                         <span className="text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" style={{ background: "linear-gradient(135deg, hsl(271, 43%, 49%) 0%, rgb(65, 65, 159), hsl(220, 95%, 75%) 100%)" }} />
+                      <Progress value={skill.level} className="h-2 bg-secondary" />
                     </div>
                   ))}
                 </div>
