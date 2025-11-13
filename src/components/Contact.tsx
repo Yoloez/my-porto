@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,51 +16,95 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e) => {
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init("6ifygz6eWs9E_cGAA");
+  }, []);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
+
+    if (!form.current) {
+      toast({
+        title: "Error",
+        description: "Form reference tidak ditemukan.",
+        variant: "destructive",
+      });
+      setIsLoading(false);
+      return;
+    }
+
+    // Validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: "Validasi Gagal",
+        description: "Semua field harus diisi.",
+        variant: "destructive",
+      });
+      setIsLoading(false);
+      return;
+    }
+
+    console.log("Mengirim email dengan data:", {
+      serviceId: "service_6en6ygs",
+      templateId: "template_csjebky",
+      publicKey: "6ifygz6eWs9E_cGAA",
+      formData,
+    });
 
     emailjs
-      .sendForm("service_6en6ygs", "template_csjebky", form.current, {
+      .sendForm("service_y5ed4he", "template_csjebky", form.current, {
         publicKey: "6ifygz6eWs9E_cGAA",
       })
       .then(
-        () => {
-          console.log("SUCCESS!");
+        (response) => {
+          console.log("SUCCESS!", response);
           toast({
-            title: "Pesan Terkirim!",
+            title: "Pesan Terkirim! ✅",
             description: "Terima kasih atas pesan Anda. Saya akan segera merespon.",
           });
+          // Reset form
+          setFormData({ name: "", email: "", subject: "", message: "" });
+          if (form.current) {
+            form.current.reset();
+          }
         },
-        (error) => {
-          console.log("GAGAL CIKKK", error.text);
+        (error: any) => {
+          console.error("GAGAL:", error);
+          console.error("Error text:", error.text);
+          console.error("Error status:", error.status);
+
+          let errorMessage = "Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.";
+
+          if (error.status === 400) {
+            errorMessage = "Email configuration salah. Periksa Service ID dan Template ID.";
+          } else if (error.status === 401) {
+            errorMessage = "Public Key tidak valid.";
+          }
+
           toast({
-            title: "Pesan Gagal terkirim!",
-            description: "Sedang ada perbaikan sistem.",
+            title: "Pesan Gagal terkirim! ❌",
+            description: errorMessage,
+            variant: "destructive",
           });
         }
-      );
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
-    toast({
-      title: "Pesan Terkirim!",
-      description: "Terima kasih atas pesan Anda. Saya akan segera merespon.",
-    });
-
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
+      )
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const contactInfo = [
@@ -97,7 +141,7 @@ const Contact = () => {
           <h2 className="text-4xl font-bold mb-4">
             <span className="text-gradient">Reach</span> Me
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Punya project menarik? Mari diskusi dan wujudkan ide Anda menjadi kenyataan</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Got an interesting project? Let's discuss and work together.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -110,28 +154,28 @@ const Contact = () => {
               <form onSubmit={sendEmail} ref={form} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Nama</Label>
-                    <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Nama lengkap Anda" required />
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your full name" required disabled={isLoading} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="email@example.com" required />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="email@example.com" required disabled={isLoading} />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subjek</Label>
-                  <Input id="subject" name="subject" value={formData.subject} onChange={handleChange} placeholder="Subjek pesan" required />
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input id="subject" name="subject" value={formData.subject} onChange={handleChange} placeholder="Subject of your message" required disabled={isLoading} />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Pesan</Label>
-                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Ceritakan project atau ide Anda..." rows={5} required />
+                  <Label htmlFor="message">Your Message</Label>
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell me more about your project..." rows={5} required disabled={isLoading} />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full glow-effect group">
-                  <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  Kirim Pesan
+                <Button type="submit" size="lg" className="w-full glow-effect group" disabled={isLoading}>
+                  <Send className={`mr-2 h-5 w-5 ${isLoading ? "animate-spin" : "group-hover:translate-x-1"} transition-transform`} />
+                  {isLoading ? "Mengirim..." : "Kirim Pesan"}
                 </Button>
               </form>
             </CardContent>
@@ -141,7 +185,7 @@ const Contact = () => {
           <div className="space-y-8 animate-fade-in-left">
             <div>
               <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
-              <p className="text-muted-foreground leading-relaxed mb-8">Saya selalu antusias untuk mendengar tentang project baru, peluang kolaborasi, atau sekadar ngobrol tentang teknologi. Jangan ragu untuk menghubungi saya!</p>
+              <p className="text-muted-foreground leading-relaxed mb-8">I’m always excited to hear about new projects, collaboration opportunities, or just chat about technology. Feel free to reach out!</p>
             </div>
 
             <div className="space-y-6">

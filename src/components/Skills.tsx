@@ -78,7 +78,7 @@ const Skills = () => {
           <h2 className="text-4xl font-bold mb-4">
             <span className="text-gradient">Skills</span> & Expertise
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Teknologi dan tools yang saya kuasai untuk menciptakan solusi digital terbaik</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">The technologies and tools I master to create the best digital solutions.</p>
         </div>
 
         {/* Skill Categories */}

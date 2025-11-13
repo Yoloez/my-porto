@@ -26,7 +26,7 @@ const Portfolio = () => {
         "This cafeteria website offers a seamless way for customers to browse the menu and place their orders online. With just a few clicks, you can choose your favorite meals, customize your order, and enjoy a faster, more convenient dining experience.",
       image: project2,
       technologies: ["PHP Native", "HTML", "CSS", "MySQL", "JavaScript", "Bootstrap"],
-      liveUrl: "#",
+      liveUrl: "https://github.com/Yoloez/Projek-UAS",
       githubUrl: "https://github.com/Yoloez/Projek-UAS",
     },
     {
@@ -34,8 +34,16 @@ const Portfolio = () => {
       description: "A comprehensive information system designed to streamline and enhance the management of educational institutions, providing efficient solutions for administrative tasks, student data management, and academic processes.",
       image: project3,
       technologies: ["Expo", "Laravel", "React Native", "MySQL", "TypeScript"],
-      liveUrl: "#",
+      // liveUrl: "#",
       githubUrl: "https://github.com/Yoloez/FE-SIA-GLOBAL/tree/features/chat",
+    },
+    {
+      title: "BMI & BMR Calculator",
+      description: "A web application that helps users calculate their Body Mass Index (BMI) and Basal Metabolic Rate (BMR) based on their personal information and activity level.",
+      image: project4,
+      technologies: ["Next Js", "Tailwind CSS", "TypeScript"],
+      liveUrl: "https://bmi-bmr.vercel.app/",
+      githubUrl: "",
     },
     {
       title: "BMI & BMR Calculator",
