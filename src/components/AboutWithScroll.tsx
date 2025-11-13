@@ -12,22 +12,22 @@ const AboutWithScroll = () => {
     {
       icon: Code,
       title: "Clean Code",
-      description: "Menulis kode yang bersih, maintainable, dan scalable",
+      description: "Write maintainable and efficient code",
     },
     {
       icon: Palette,
       title: "UI/UX Design",
-      description: "Menciptakan interface yang intuitif dan user-friendly",
+      description: "Make beautiful modern and user-friendly interfaces",
     },
     {
       icon: Rocket,
       title: "Performance",
-      description: "Optimasi performa untuk pengalaman pengguna terbaik",
+      description: "Optimize applications for speed and scalability",
     },
     {
       icon: Users,
       title: "Collaboration",
-      description: "Bekerja efektif dalam tim dan komunikasi yang baik",
+      description: "Work effectively in team environments",
     },
   ];
 
@@ -46,11 +46,11 @@ const AboutWithScroll = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">My Journey</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Dimulai dari curiosity tentang bagaimana website bekerja, saya mulai belajar programming secara autodidak. Sekarang saya fokus pada pengembangan aplikasi web modern menggunakan teknologi terkini seperti React, Node.js, dan
-                cloud technologies.
+                Starting from a curiosity about how websites work, I began learning programming self-taught when I was in high school, and I continued my journey by pursuing a Software Engineering program at Gadjah Mada University. Now I
+                focus on developing modern web, and mobile app using the latest technologies such as React, Node.js, Laravel, Expo.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Saya percaya bahwa teknologi harus memberikan solusi nyata untuk masalah nyata. Itulah mengapa saya selalu berusaha memahami kebutuhan bisnis dan user experience dalam setiap project yang saya kerjakan.
+                I believe that technology should provide real solutions to real problems. That's why I always strive to understand business needs and user experience in every project I work on.
               </p>
             </div>
 
